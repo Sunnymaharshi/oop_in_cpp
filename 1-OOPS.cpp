@@ -9,7 +9,7 @@ class AbstractEmployee {
 
 class Employee:AbstractEmployee{
 
-    // all are private by default
+    // if we don't specify access modifiers, all are private by default
 private:
     string Company;
     int Age;
@@ -84,7 +84,8 @@ public:
             cout<<Name<<" no promotion for you"<<endl;
     }
 
-    // by making virtual function, when child class object is referenced, it will check first
+    // by making virtual function, when child class object is referenced with parent
+    // class pointer variable, it will check first
     // if there is implementation for this function inside referenced object class
     virtual void Work(){
         cout<<Name<<" is cheking email, task backlog, performing tasks.."<<endl;
@@ -195,3 +196,33 @@ int main(){
     e2->Work();
 
 }
+/*
+Output:
+Employee Constructor Called
+Name : Sunny
+Company : XYZ
+Age : 20
+Age : 21
+Sunny got promoted!
+Employee Constructor Called
+Name : Sunny
+Company : XYZ
+Age : 20
+Sunny no promotion for you
+Copy Constructor called
+Name : Sunny
+Company : XYZ
+Age : 21
+Employee Constructor Called
+Developer Constructor Called
+Maharshi fixed bugs using C++
+Maharshi got promoted!
+Employee Constructor Called
+Teacher Constructor Called
+John is preparing Lesson OOP lesson     
+Sunny is cheking email, task backlog, performing tasks..
+Maharshi is writing C++ code
+John is teaching OOP
+Maharshi is writing C++ code
+John is teaching OOP
+*/

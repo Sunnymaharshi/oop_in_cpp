@@ -1,19 +1,14 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-
-
 class Person {
 
-
 public:
-
     char *name;
 
     // default constructor
     Person(){
 
-        cout<<"Default Constructor called\n";
         name = new char[20];
     }
 
